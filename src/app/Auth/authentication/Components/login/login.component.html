@@ -1,0 +1,58 @@
+<div class="container-fluid">
+    <form (ngSubmit)="submit()" [formGroup]="loginForm">
+      <div class="row vh-100 align-items-center auth-background-image">
+        <div class="col-md-4 offset-md-4">
+          <mat-card class="p-4 pb-5 transparent-auth-card">
+            <h1 class="text-center">
+              <strong>"E-Commerce"</strong>
+            </h1>
+  
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label class="black-color">Username</mat-label>
+              <input matInput formControlName="userName" />
+  
+              <mat-error
+                *ngIf="loginForm.controls['userName'].hasError('required')"
+              >
+                {{ "Username"}} {{ "is-required"}}
+              </mat-error>
+            </mat-form-field>
+  
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label class="black-color">Password</mat-label>
+              <input
+                [type]="showPassword ? 'text' : 'password'"
+                matInput
+                formControlName="password"
+              />
+  
+              <mat-icon *ngIf="!showPassword" (click)="toggleShow()" matSuffix
+                >visibility</mat-icon
+              >
+              <mat-icon *ngIf="showPassword" (click)="toggleShow()" matSuffix
+                >visibility_off</mat-icon
+              >
+  
+              <mat-error
+                *ngIf="loginForm.controls['password'].hasError('required')"
+              >
+                {{ "Password" }} {{ "is-required" }}
+              </mat-error>
+            </mat-form-field>
+  
+            <button
+              [disabled]="!loginForm.valid"
+              type="submit"
+              mat-raised-button
+              class="btn-raised full-width"
+            >
+              login
+            </button>
+            <p class="float-end mt-3 cursor">
+              <a routerLink="/auth/forgot-password">Forget Password?</a>
+            </p>
+          </mat-card>
+        </div>
+      </div>
+    </form>
+  </div>
