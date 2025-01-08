@@ -1,0 +1,151 @@
+<!-- <div class="container">
+  <div class="details">
+    <form [formGroup]="registerForm" (ngSubmit)="submit()">
+      <text-input
+        [control]="fc.name"
+        [showErrorsWhen]="isSubmitted"
+        label="Name"
+      >
+        `</text-input
+      >
+      <text-input
+        [control]="fc.email"
+        [showErrorsWhen]="isSubmitted"
+        label="Email"
+        type="email"
+      >
+        `</text-input
+      >
+      <text-input
+        [control]="fc.password"
+        [showErrorsWhen]="isSubmitted"
+        label="Password"
+        type="password"
+      >
+        `</text-input
+      >
+      <text-input
+        [control]="fc.confirmPassword"
+        [showErrorsWhen]="isSubmitted"
+        label="Confirm Password"
+        type="password"
+      >
+      </text-input>
+      <text-input
+        [control]="fc.address"
+        [showErrorsWhen]="isSubmitted"
+        label="Address"
+      >
+        `</text-input
+      >
+      <default-button text="Register"></default-button>
+      <div class="login">
+        Already a user? &nbsp;
+        <a routerLink="/login" [queryParams]="{ returnUrl: returnUrl }">
+          Login Here
+        </a>
+      </div>
+    </form>
+  </div>
+</div> -->
+
+<div class="container-fluid">
+  <form (ngSubmit)="submit()" [formGroup]="registerForm">
+    <div class="row vh-100 align-items-center auth-background-image">
+      <div class="col-md-4 offset-md-4">
+        <mat-card class="p-4 pb-5 pb-5 vh-10 transparent-auth-card">
+          <h1 class="text-center">
+            <strong> </strong>
+          </h1>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" />
+
+            <mat-error
+              *ngIf="registerForm.controls['name'].hasError('required')"
+            >
+              name is-required
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Email Address</mat-label>
+            <input matInput formControlName="email" />
+
+            <mat-error
+              *ngIf="registerForm.controls['email'].hasError('required')"
+            >
+              email is-required
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              matInput
+              formControlName="password"
+            />
+            <mat-icon *ngIf="!showPassword" (click)="toggleShow()" matSuffix
+              >visibility_off</mat-icon
+            >
+            <mat-icon *ngIf="showPassword" (click)="toggleShow()" matSuffix
+              >visibility</mat-icon
+            >
+
+            <mat-error
+              *ngIf="registerForm.controls['password'].hasError('required')"
+            >
+              Password is-required
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              matInput
+              formControlName="confirmPassword"
+            />
+            <mat-icon *ngIf="showPassword" (click)="toggleShow()" matSuffix
+              >visibility_off</mat-icon
+            >
+            <mat-icon *ngIf="!showPassword" (click)="toggleShow()" matSuffix
+              >visibility</mat-icon
+            >
+          </mat-form-field>
+          <mat-error *ngIf="registerForm.errors?.['passwordDontMatch']">
+            Password shoul Match
+          </mat-error>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="address" />
+
+            <mat-error
+              *ngIf="registerForm.controls['address'].hasError('required')"
+            >
+              address is-required
+            </mat-error>
+          </mat-form-field>
+
+          <button
+            [disabled]="!registerForm.valid"
+            type="submit"
+            mat-raised-button
+            class="btn-raised full-width"
+          >
+            Sign Up
+          </button>
+          <p class="float-end mt-3 cursor">
+            Already have a account?
+            <a routerLink="/login" [queryParams]="{ returnUrl: returnUrl }">
+              Login</a
+            >
+          </p>
+        </mat-card>
+      </div>
+    </div>
+  </form>
+</div>

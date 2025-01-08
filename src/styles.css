@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 html,
 body {
   height: 100%;
@@ -7,6 +10,13 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+a{
+  text-decoration: none !important;
+}
+.prodImg{
+  width: 60% !important;
+  border-radius: 30px;
+}
 .cursor {
   cursor: pointer !important;
 }
@@ -14,9 +24,6 @@ body {
 .white-color {
   color: white !important;
 }
-.black-color {
-    color: rgb(5, 0, 0) !important;
-  }
 
 .white-background-color {
   background-color: white !important;
@@ -27,17 +34,17 @@ body {
 }
 
 .transparent-auth-card {
-  background-color: #f6f4f3c9 !important;
+  background-color: rgba(255, 251, 255, 0.712) !important;
+  border-radius: 12px !important;
 }
 
 .auth-background-image {
-  background-image: url(./assets/bg-2.avif);
+  background-image: url(./assets/images/bg-2.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
-
 .theme-color {
-  color: #020257 !important;
+  color: #ff4d4d !important;
 }
 .font-size-30 {
   font-size: 30px;
@@ -49,11 +56,11 @@ body {
   font-size: 16px;
 }
 .theme-background-color {
-  background-color: #020257 !important;
+  background-color: #ff4d4d !important;
 }
 
 .btn-raised {
-  background-color: #020257 !important;
+  background-color: #ff4d4d !important;
   color: white !important;
   font-size: 0.8rem;
 }
@@ -65,18 +72,18 @@ body {
 }
 
 .btn-bordered {
-  border-color: #020257 !important;
-  color: #020257 !important;
+  border-color: #f55555 !important;
+  color: #ff4d4d !important;
   font-size: 0.8rem;
 }
 table {
   width: 100% !important;
 }
 .font-color {
-  color: #020257;
+  color: #ff4d4d;
 }
 .icon-color {
-  color: #020257;
+  color: #ff4d4d;
 }
 .font-color-blue {
   color: rgb(29, 115, 185);
@@ -91,7 +98,7 @@ table {
   font-size: 14px !important;
 }
 .span {
-  color: #020257;
+  color: #ff4d4d;
   font-size: 18px;
   font-weight: bold;
 }
@@ -107,7 +114,7 @@ table {
 .header {
   font-size: 12px;
   font-weight: 6px;
-  color: #020257;
+  color: #ff4d4d;
 }
 
 .warning {
@@ -136,4 +143,20 @@ th.mat-header-cell {
 td {
   text-align: center !important;
 }
+.profile-image {
+  height: 50px;
+  width: 50px;
+  color: #cf2ca0;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 50%;
+  text-transform: uppercase;
+}
+.s-color{
+  background: #fcd9ff;
+}
 
+.pd-4{
+  padding: 10px;
+}

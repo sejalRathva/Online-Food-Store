@@ -1,0 +1,39 @@
+<app-search></app-search>
+<app-tags></app-tags>
+<app-not-found [visible]="!foods || !foods.length" resetLinkText="Reset Search">
+</app-not-found>
+<div class="container p-4">
+  <div class="row">
+    <div class="col-md-3 p-2" *ngFor="let food of foods">
+      <a routerLink="/food/{{ food.id }}">
+        <mat-card class="example-card" appearance="outlined">
+          <mat-card-header>
+            <mat-card-title> {{ food.name }}</mat-card-title>
+          </mat-card-header>
+          <img
+            mat-card-image
+            [src]="food.imageUrl"
+            alt="Photo of a Shiba Inu"
+          />
+          <mat-card-content>
+            <div class="origins p-2">
+              <span *ngFor="let origin of food.origins">
+                {{ origin }}
+              </span>
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>
+              <span class="favorite {{ food.favorite ? '' : 'not' }}"> ❤ </span>
+            </button>
+            <button mat-button>{{ food.price | currency }}</button>
+            <div class="cook-time">
+              <span>🕒</span>
+              {{ food.cookTime }}
+            </div>
+          </mat-card-actions>
+        </mat-card>
+      </a>
+    </div>
+  </div>
+</div>

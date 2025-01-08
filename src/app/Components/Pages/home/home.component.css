@@ -1,0 +1,48 @@
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  .origins{
+    flex: 9;
+  }
+  
+  .origins span{
+    border-radius: 2rem;
+    background-color: whitesmoke;
+    display: inline-block;
+    font-size: 0.8rem;
+    color: grey;
+    margin-right: 0.3rem;
+    padding: 0 0.5rem;
+    margin-top: 0.2rem;
+  }
+  
+  .cook-time{
+    font-size: 0.9rem;
+    flex: 3;
+    text-align: right;
+  }
+  .origins{
+    flex: 9;
+  }
+  
+  .origins span{
+    border-radius: 2rem;
+    background-color: whitesmoke;
+    display: inline-block;
+    font-size: 0.8rem;
+    color: grey;
+    margin-right: 0.3rem;
+    padding: 0 0.5rem;
+    margin-top: 0.2rem;
+  }
+  
+  .cook-time{
+    font-size: 0.9rem;
+    flex: 3;
+    text-align: right;
+  }

@@ -13,13 +13,14 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { RouterModule } from '@angular/router';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
-
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [SideNavComponent, TopNavComponent],
   imports: [
     CommonModule,
     HttpClientModule,
+    MatInputModule,
     MatButtonModule,
     MatIconModule,
     FormsModule,
@@ -34,8 +35,9 @@ import { TopNavComponent } from './top-nav/top-nav.component';
     RouterModule,
     MatDialogModule,
     MatSelectModule,
-  
-  ],exports:[SideNavComponent,
+  ],
+  exports: [
+    SideNavComponent,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
@@ -47,7 +49,9 @@ import { TopNavComponent } from './top-nav/top-nav.component';
     MatCardModule,
     RouterModule,
     MatDialogModule,
-    MatSelectModule, TopNavComponent
-  ]
+    MatSelectModule,
+    TopNavComponent,
+    MatInputModule,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}
